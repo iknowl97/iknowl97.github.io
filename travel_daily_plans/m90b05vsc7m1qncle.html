@@ -1,0 +1,733 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barcelona, Spain Itinerary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a5885;
+      --secondary: #e3f2fd;
+      --text: #333333;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: var(--light);
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .day-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    
+    .schedule-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.75rem;
+      position: sticky;
+      top: 0;
+    }
+    
+    .schedule-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+    
+    .activity-cell {
+      font-weight: 600;
+    }
+    
+    .notes {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+    
+    .map-link {
+      display: inline-block;
+      background: var(--secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    
+    @media (max-width: 768px) {
+      .schedule-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      .meta-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    
+    @media print {
+      body {
+        padding: 0;
+        font-size: 12pt;
+        background: white;
+      }
+      
+      .day-card {
+        page-break-after: always;
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .schedule-table th {
+        background: white;
+        color: black;
+        border-bottom: 2px solid #000;
+      }
+      
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+      }
+      
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Barcelona, Spain Travel Plan</h1>
+    <div class="meta-info">
+      <span><strong>Season:</strong> Varies - plan adjusts based on typical weather</span>
+      <span><strong>Generated:</strong> 2023-09-20</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 1: 2023-09-20</h2>
+        <p class="weather">Mild, 15-20°C (Typical Spring/Autumn)</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Visit Sagrada Familia
+              <div class="notes">Consider the guided tour for a more in-depth experience.</div>
+            </td>
+            <td>Iconic Gaudi masterpiece. Book tickets online in advance to skip the line.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.4036,2.1744" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>11:30</td>
+            <td class="activity-cell">
+              Walk to Hospital de Sant Pau
+              <div class="notes">Short walk from Sagrada Familia. Exterior is impressive even if you don't go inside.</div>
+            </td>
+            <td>Stunning modernist architecture, a UNESCO World Heritage site</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.4078,2.1781" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:30</td>
+            <td class="activity-cell">
+              Lunch near Hospital de Sant Pau
+              <div class="notes">Look for restaurants offering 'Menu del Dia' for affordable options.</div>
+            </td>
+            <td>Enjoy local Catalan cuisine.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.4078,2.1781" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:00</td>
+            <td class="activity-cell">
+              Explore Park Güell
+              <div class="notes">Book tickets online in advance. Take the metro to Lesseps or Vallcarca station and walk.</div>
+            </td>
+            <td>Another Gaudi masterpiece with panoramic city views.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.4142,2.1525" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>16:00</td>
+            <td class="activity-cell">
+              Relax and enjoy the views at Park Güell
+              <div class="notes">The park can be crowded; find a quiet spot to relax.</div>
+            </td>
+            <td>Offers fantastic photo opportunities.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.4142,2.1525" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>19:00</td>
+            <td class="activity-cell">
+              Tapas dinner in Gracia neighborhood
+              <div class="notes">Explore the side streets for hidden tapas bars.</div>
+            </td>
+            <td>Authentic tapas experience away from the tourist crowds.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.402,2.155" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 2: 2023-09-21</h2>
+        <p class="weather">Sunny, 18-23°C (Typical Spring/Autumn)</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Explore the Gothic Quarter
+              <div class="notes">Get lost in the maze-like streets. Visit the Barcelona Cathedral.</div>
+            </td>
+            <td>Wander through the narrow streets and discover hidden plazas.</td>
+            <td>3h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3847,2.1735" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:00</td>
+            <td class="activity-cell">
+              Lunch in the Gothic Quarter
+              <div class="notes">Many restaurants offer outdoor seating.</div>
+            </td>
+            <td>Enjoy traditional Catalan food.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3847,2.1735" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:30</td>
+            <td class="activity-cell">
+              Visit the Picasso Museum
+              <div class="notes">Book tickets online to avoid queues. Photography is often restricted.</div>
+            </td>
+            <td>Extensive collection of Picasso's early works.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3849,2.1802" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>16:00</td>
+            <td class="activity-cell">
+              Stroll along Las Ramblas
+              <div class="notes">Be aware of pickpockets. Enjoy the vibrant atmosphere.</div>
+            </td>
+            <td>Famous pedestrian street with street performers and flower stalls.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3803,2.1734" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>18:00</td>
+            <td class="activity-cell">
+              Visit La Boqueria Market
+              <div class="notes">Try some fresh fruit or a juice. The market can be crowded.</div>
+            </td>
+            <td>Experience a vibrant food market with fresh produce and local delicacies.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3829,2.1702" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>19:30</td>
+            <td class="activity-cell">
+              Dinner in El Born
+              <div class="notes">Explore the many options, from tapas to international cuisine.</div>
+            </td>
+            <td>Trendy neighborhood with stylish restaurants.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3851,2.1808" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 3: 2023-09-22</h2>
+        <p class="weather">Cloudy, 16-21°C (Typical Spring/Autumn)</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:30</td>
+            <td class="activity-cell">
+              Take a cable car to Montjuïc Hill
+              <div class="notes">Several cable car stations are available. Check operating hours.</div>
+            </td>
+            <td>Panoramic views of Barcelona and the harbor.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3667,2.1500" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>10:30</td>
+            <td class="activity-cell">
+              Visit Montjuïc Castle
+              <div class="notes">Explore the castle grounds and learn about its history.</div>
+            </td>
+            <td>Historic fortress with stunning views.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3603,2.1492" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:30</td>
+            <td class="activity-cell">
+              Lunch on Montjuïc Hill
+              <div class="notes">Several restaurants and cafes are available.</div>
+            </td>
+            <td>Enjoy a meal with a view.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3603,2.1492" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:00</td>
+            <td class="activity-cell">
+              Visit the Magic Fountain of Montjuïc (check schedule)
+              <div class="notes">Check the show schedule in advance as it varies depending on the season.</div>
+            </td>
+            <td>Spectacular light and water show (seasonal).</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3685,2.1513" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>15:30</td>
+            <td class="activity-cell">
+              Explore the Joan Miró Foundation
+              <div class="notes">Extensive collection of Miró's art. Consider a guided tour.</div>
+            </td>
+            <td>Museum dedicated to the works of Joan Miró.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3658,2.1531" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>19:00</td>
+            <td class="activity-cell">
+              Dinner in Poble Espanyol
+              <div class="notes">Explore the different architectural styles of Spain.</div>
+            </td>
+            <td>Architectural museum with restaurants and shops.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3645,2.1468" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 4: 2023-09-23</h2>
+        <p class="weather">Sunny, 20-25°C (Typical Summer)</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Relax on Barceloneta Beach
+              <div class="notes">Rent a sunbed and umbrella. Swim in the Mediterranean Sea.</div>
+            </td>
+            <td>Enjoy the sun and sand.</td>
+            <td>3h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3756,2.1909" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:00</td>
+            <td class="activity-cell">
+              Lunch at a beachside chiringuito
+              <div class="notes">Many chiringuitos offer fresh seafood dishes.</div>
+            </td>
+            <td>Enjoy seafood and paella with ocean views.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3756,2.1909" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:00</td>
+            <td class="activity-cell">
+              Explore Port Vell
+              <div class="notes">Walk along the harbor and admire the yachts.</div>
+            </td>
+            <td>Harbor area with shops and restaurants.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3756,2.1844" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>16:00</td>
+            <td class="activity-cell">
+              Visit the Barcelona Aquarium
+              <div class="notes">Walk through the underwater tunnel.</div>
+            </td>
+            <td>Explore the marine life of the Mediterranean Sea.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3749,2.1863" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>18:30</td>
+            <td class="activity-cell">
+              Dinner in Barceloneta
+              <div class="notes">Many restaurants offer paella and other seafood specialties.</div>
+            </td>
+            <td>Enjoy fresh seafood near the beach.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3756,2.1909" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 5: 2023-09-24</h2>
+        <p class="weather">Partly Cloudy, 17-22°C (Typical Spring/Autumn)</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Visit Casa Batlló
+              <div class="notes">Book tickets online to skip the line. Audioguides are recommended.</div>
+            </td>
+            <td>Another stunning Gaudi house on Passeig de Gracia.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3918,2.1647" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>11:00</td>
+            <td class="activity-cell">
+              Walk along Passeig de Gracia
+              <div class="notes">Admire the architecture of Casa Milà (La Pedrera) and other buildings.</div>
+            </td>
+            <td>Upscale shopping street with modernist architecture.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3918,2.1647" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:30</td>
+            <td class="activity-cell">
+              Lunch on Passeig de Gracia
+              <div class="notes">Several options are available, from casual cafes to fine dining.</div>
+            </td>
+            <td>Enjoy a meal at one of the many cafes and restaurants.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3918,2.1647" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:00</td>
+            <td class="activity-cell">
+              Visit Casa Milà (La Pedrera)
+              <div class="notes">Book tickets online to avoid queues. The rooftop offers great city views.</div>
+            </td>
+            <td>Another Gaudi masterpiece with unique rooftop architecture.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3947,2.1642" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>16:30</td>
+            <td class="activity-cell">
+              Explore the Eixample neighborhood
+              <div class="notes">Walk along Avinguda Diagonal and admire the buildings.</div>
+            </td>
+            <td>Grid-patterned streets with modernist architecture.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3947,2.1642" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>19:00</td>
+            <td class="activity-cell">
+              Farewell dinner at a traditional Catalan restaurant
+              <div class="notes">Look for restaurants offering traditional dishes like paella and fideuà.</div>
+            </td>
+            <td>Enjoy a final taste of Catalan cuisine.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.3874,2.1700" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="no-print">
+    <div class="pro-tip">
+      <h3>Pro Tip</h3>
+      <p>Purchase a Barcelona Card for free public transport and discounts on attractions.</p>
+    </div>
+    <p class="print-footer">Printed from: http://example.com | Generated on: 2023-09-20</p>
+  </footer>
+</body>
+</html>
+```
