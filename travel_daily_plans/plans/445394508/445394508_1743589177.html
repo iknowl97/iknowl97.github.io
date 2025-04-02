@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Budapest Travel Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet>
+<style>
+:root{--primary:#2a5885;--secondary:#e3f2fd;--text:#333;--light:#f8f9fa}
+body{font-family:Poppins,system-ui,sans-serif;line-height:1.5;color:var(--text);max-width:1200px;margin:0 auto;padding:1rem;background:var(--light)}
+.header{text-align:center;margin-bottom:2rem}
+h1{color:var(--primary);margin-bottom:0.5rem;font-size:2.5rem}
+.meta-info{display:flex;justify-content:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap}
+.day-card{background:#fff;border-radius:8px;padding:1.5rem;margin-bottom:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.day-header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #eee;padding-bottom:0.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.schedule-table{width:100%;border-collapse:collapse;margin:1rem 0}
+.schedule-table th{background:var(--primary);color:#fff;text-align:left;padding:0.75rem;position:sticky;top:0}
+.schedule-table td{padding:0.75rem;border-bottom:1px solid #ddd;vertical-align:top}
+.activity-cell{font-weight:600}
+.notes{font-size:0.9em;color:#555;margin-top:0.25rem}
+.map-link{display:inline-block;background:var(--secondary);padding:0.25rem 0.5rem;border-radius:4px;text-decoration:none;color:var(--primary);transition:transform 0.2s}
+.map-link:hover{transform:translateY(-1px)}
+.pro-tip{background:#fff;padding:1rem;border-radius:8px;margin-top:2rem}
+@media (max-width:768px){
+.schedule-table{display:block;overflow-x:auto;white-space:nowrap}
+.meta-info{gap:0.5rem}.day-header{gap:0.75rem}
+h1{font-size:2rem}}
+@media print{
+body{padding:0;font-size:12pt;background:#fff}
+.day-card{page-break-after:always;box-shadow:none;border:1px solid #ddd}
+.schedule-table th{background:#fff;color:#000;border-bottom:2px solid #000}
+a::after{content:" (" attr(href) ")";font-size:0.8em}
+.no-print{display:none}
+.map-link{background:#fff}}
+</style>
+</head>
+<body>
+<header class="header">
+<h1>Budapest Travel Plan</h1>
+<div class="meta-info">
+<span><strong>Season:</strong> Variable - plan considers general conditions</span>
+<span><strong>Generated:</strong> 2024-07-19</span>
+</div>
+</header>
+
+<main>
+<section class="day-card">
+<div class="day-header">
+<h2>Day 1: 2024-07-20</h2>
+<p class="weather">Sunny, 25°C</p>
+</div>
+<table class="schedule-table">
+<thead><tr><th>Time</th><th>Activity</th><th>Details</th><th>Duration</th><th>Location</th></tr></thead>
+<tbody>
+<tr role="row">
+<td>09:00</td>
+<td class="activity-cell" aria-describedby="note1">
+Visit Buda Castle
+<div class="notes" id="note1">Wear comfortable shoes for walking uphill. Consider the funicular for an alternative ascent.</div>
+</td>
+<td>Explore the historical castle district, Matthias Church, and Fisherman's Bastion for panoramic views.</td>
+<td>3h</td>
+<td><a href="https://maps.google.com/?q=47.4979,19.0399" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>12:00</td>
+<td class="activity-cell" aria-describedby="note2">
+Lunch at Baltazar Grill
+<div class="notes" id="note2">Reservations recommended, especially during peak season.</div>
+</td>
+<td>Offers a modern take on Hungarian cuisine in the Castle District with outdoor seating.</td>
+<td>1.5h</td>
+<td><a href="https://maps.google.com/?q=47.501,19.0387" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>14:00</td>
+<td class="activity-cell" aria-describedby="note3">
+Explore the Hospital in the Rock Nuclear Bunker Museum
+<div class="notes" id="note3">Guided tours are available in English. Book in advance.</div>
+</td>
+<td>A fascinating look into a Cold War-era hospital and bunker system.</td>
+<td>2h</td>
+<td><a href="https://maps.google.com/?q=47.5044,19.0354" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>16:30</td>
+<td class="activity-cell" aria-describedby="note4">
+Relax at Rudas Baths
+<div class="notes" id="note4">Check specific hours for men-only and women-only days. Swimsuit required.</div>
+</td>
+<td>Enjoy thermal baths with a rooftop pool offering stunning city views.</td>
+<td>2.5h</td>
+<td><a href="https://maps.google.com/?q=47.4929,19.0499" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>19:30</td>
+<td class="activity-cell" aria-describedby="note5">
+Dinner at Gettó Gulyás
+<div class="notes" id="note5">Located in the Jewish Quarter. Offers vegetarian options.</div>
+</td>
+<td>Authentic Hungarian goulash and other traditional dishes in a cozy setting.</td>
+<td>2h</td>
+<td><a href="https://maps.google.com/?q=47.4987,19.057" class="map-link" target="_blank">View Map</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="day-card">
+<div class="day-header">
+<h2>Day 2: 2024-07-21</h2>
+<p class="weather">Partly Cloudy, 24°C</p>
+</div>
+<table class="schedule-table">
+<thead><tr><th>Time</th><th>Activity</th><th>Details</th><th>Duration</th><th>Location</th></tr></thead>
+<tbody>
+<tr role="row">
+<td>09:00</td>
+<td class="activity-cell" aria-describedby="note6">
+Visit the Hungarian Parliament Building
+<div class="notes" id="note6">Book tickets online well in advance to secure your spot.</div>
+</td>
+<td>Marvel at the iconic architecture on a guided tour. See the Holy Crown of Hungary.</td>
+<td>2.5h</td>
+<td><a href="https://maps.google.com/?q=47.5073,19.0455" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>11:30</td>
+<td class="activity-cell">
+Shoes on the Danube Bank Memorial
+</td>
+<td>A poignant memorial commemorating the Jewish victims shot into the Danube River during WWII.</td>
+<td>0.5h</td>
+<td><a href="https://maps.google.com/?q=47.5025,19.0455" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>12:30</td>
+<td class="activity-cell" aria-describedby="note7">
+Lunch at Great Market Hall
+<div class="notes" id="note7">Try langos, a deep-fried flatbread with various toppings.</div>
+</td>
+<td>Explore the bustling market and sample local delicacies at the food stalls.</td>
+<td>1.5h</td>
+<td><a href="https://maps.google.com/?q=47.4861,19.0613" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>14:30</td>
+<td class="activity-cell" aria-describedby="note8">
+Visit St. Stephen's Basilica
+<div class="notes" id="note8">Check for mass schedules before your visit. A small fee applies for climbing to the dome.</div>
+</td>
+<td>Climb to the dome for panoramic city views, or admire the basilica's architecture.</td>
+<td>2h</td>
+<td><a href="https://maps.google.com/?q=47.4981,19.0546" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>17:00</td>
+<td class="activity-cell" aria-describedby="note9">
+Walk along Andrássy Avenue
+<div class="notes" id="note9">Ends at Heroes' Square.</div>
+</td>
+<td>Stroll down this UNESCO World Heritage avenue, lined with elegant shops and embassies.</td>
+<td>1.5h</td>
+<td><a href="https://maps.google.com/?q=47.5033,19.0589" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>19:00</td>
+<td class="activity-cell" aria-describedby="note10">
+Dinner at Rosenstein Vendéglő
+<div class="notes" id="note10">Reservations highly recommended. Try the cholent.</div>
+</td>
+<td>Traditional Jewish-Hungarian cuisine with a refined atmosphere.</td>
+<td>2h</td>
+<td><a href="https://maps.google.com/?q=47.5111,19.0833" class="map-link" target="_blank">View Map</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="day-card">
+<div class="day-header">
+<h2>Day 3: 2024-07-22</h2>
+<p class="weather">Rainy, 22°C</p>
+</div>
+<table class="schedule-table">
+<thead><tr><th>Time</th><th>Activity</th><th>Details</th><th>Duration</th><th>Location</th></tr></thead>
+<tbody>
+<tr role="row">
+<td>10:00</td>
+<td class="activity-cell" aria-describedby="note11">
+Visit the House of Terror Museum
+<div class="notes" id="note11">Can be emotionally intense. Allow ample time.</div>
+</td>
+<td>Learn about the horrors of the Nazi and Soviet regimes in Hungary.</td>
+<td>3h</td>
+<td><a href="https://maps.google.com/?q=47.5055,19.0656" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>13:30</td>
+<td class="activity-cell" aria-describedby="note12">
+Lunch at New York Cafe
+<div class="notes" id="note12">Be prepared for a potentially long wait. The interior is worth seeing even if you just have a coffee.</div>
+</td>
+<td>Experience a luxurious setting with traditional Hungarian and international dishes.</td>
+<td>1.5h</td>
+<td><a href="https://maps.google.com/?q=47.5013,19.072" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>15:30</td>
+<td class="activity-cell" aria-describedby="note13">
+Explore the Dohány Street Synagogue
+<div class="notes" id="note13">Modest dress required. Head coverings are available for men.</div>
+</td>
+<td>Visit Europe's largest synagogue and learn about Jewish history in Budapest.</td>
+<td>2h</td>
+<td><a href="https://maps.google.com/?q=47.4968,19.0573" class="map-link" target="_blank">View Map</a></td>
+</tr>
+<tr role="row">
+<td>18:00</td>
+<td class="activity-cell" aria-describedby="note14">
+Dinner and Ruin Bar Exploration
+<div class="notes" id="note14">Szimpla Kert is a must-see. Many ruin bars offer food as well. Great for an evening even if rainy.</div>
+</td>
+<td>Start with dinner near the ruin bars then explore Szimpla Kert and other unique bars in the Jewish Quarter.</td>
+<td>4h</td>
+<td><a href="https://maps.google.com/?q=47.4988,19.0577" class="map-link" target="_blank">View Map</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</main>
+
+<footer class="no-print">
+<div class="pro-tip">
+<h3>Pro Tip</h3>
+<p>Utilize Budapest's excellent public transport; purchase a travel card for cost-effective travel across trams, buses, and the metro.</p>
+</div>
+<p class="print-footer">Printed from: [[current_url]] | Generated on: [[current_date]]</p>
+</footer>
+</body>
+</html>
