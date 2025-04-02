@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Plan: Dubai, United Arab Emirates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            color: #2d3436;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2a5885;
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .season {
+            color: #e67e22;
+            font-size: 1.1em;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .pro-tip {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #1976d2;
+        }
+
+        .day-card {
+            background: #ffffff;
+            border-radius: 10px;
+            margin: 25px 0;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .day-header {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .weather {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .schedule-table th {
+            background: #f8f9fa;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .schedule-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .activity-why {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            display: block;
+        }
+
+        .map-link {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85em;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .day-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .schedule-table td, 
+            .schedule-table th {
+                padding: 8px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                font-size: 12px;
+            }
+            
+            .map-link {
+                background: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trip to Dubai, United Arab Emirates</h1>
+        <p class="season">Season: Winter</p>
+
+        <div class="pro-tip">
+            <h3>💡 Pro Tip</h3>
+            <p>Purchase a Nol card for convenient and cost-effective travel on Dubai's public transportation (metro, buses, and trams).</p>
+        </div>
+
+        <div class="daily-plans">
+            <!-- Day 1 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Day 1 - 2024-12-20</span>
+                    <span class="weather">☀️ Sunny, 25°C</span>
+                </div>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Activity</th>
+                            <th>Duration</th>
+                            <th>Notes</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:00</td>
+                            <td>
+                                <span class="activity-title">Visit Burj Khalifa</span>
+                                <span class="activity-why">See the world's tallest building.</span>
+                            </td>
+                            <td>3h</td>
+                            <td>Book tickets in advance to avoid long queues. Visit the observation deck.</td>
+                            <td><a href="https://www.google.com/maps?q=25.1972,55.2744" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>12:30</td>
+                            <td>
+                                <span class="activity-title">Lunch at Dubai Mall</span>
+                                <span class="activity-why">Enjoy diverse cuisine.</span>
+                            </td>
+                            <td>1.5h</td>
+                            <td>Choose from many dining options.</td>
+                            <td><a href="https://www.google.com/maps?q=25.1983,55.2792" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>14:30</td>
+                            <td>
+                                <span class="activity-title">Explore Dubai Mall</span>
+                                <span class="activity-why">Shop.</span>
+                            </td>
+                            <td>3h</td>
+                            <td>See the Dubai Aquarium and Underwater Zoo.</td>
+                            <td><a href="https://www.google.com/maps?q=25.1983,55.2792" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>18:00</td>
+                            <td>
+                                <span class="activity-title">Dubai Fountain Show</span>
+                                <span class="activity-why">Watch a spectacular water show.</span>
+                            </td>
+                            <td>1h</td>
+                            <td>Shows run every 30 minutes in the evening.</td>
+                            <td><a href="https://www.google.com/maps?q=25.1975,55.2731" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>19:30</td>
+                            <td>
+                                <span class="activity-title">Dinner near Burj Khalifa</span>
+                                <span class="activity-why">Enjoy</span>
+                            </td>
+                            <td>2h</td>
+                            <td>Eat.</td>
+                            <td><a href="https://www.google.com/maps?q=25.1972,55.2744" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Day 2 - 2024-12-21</span>
+                    <span class="weather">☀️ Sunny, 26°C</span>
+                </div>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Activity</th>
+                            <th>Duration</th>
+                            <th>Notes</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:00</td>
+                            <td>
+                                <span class="activity-title">Visit Dubai Miracle Garden</span>
+                                <span class="activity-why">See the flower displays.</span>
+                            </td>
+                            <td>3h</td>
+                            <td>Check opening times.</td>
+                            <td><a href="https://www.google.com/maps?q=25.0594,55.2008" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>12:30</td>
+                            <td>
+                                <span class="activity-title">Lunch at Global Village</span>
+                                <span class="activity-why">Enjoy</span>
+                            </td>
+                            <td>1.5h</td>
+                            <td>Global Village open in winter.</td>
+                            <td><a href="https://www.google.com/maps?q=25.0644,55.2800" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>14:30</td>
+                            <td>
+                                <span class="activity-title">Explore Global Village</span>
+                                <span class="activity-why">Culture</span>
+                            </td>
+                            <td>4h</td>
+                            <td>Shop.</td>
+                            <td><a href="https://www.google.com/maps?q=25.0644,55.2800" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>19:00</td>
+                            <td>
+                                <span class="activity-title">Dinner at Global Village</span>
+                                <span class="activity-why">Eat.</span>
+                            </td>
+                            <td>2h</td>
+                            <td>Eat.</td>
+                            <td><a href="https://www.google.com/maps?q=25.0644,55.2800" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Day 3 - 2024-12-22</span>
+                    <span class="weather">☀️ Sunny, 25°C</span>
+                </div>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Activity</th>
+                            <th>Duration</th>
+                            <th>Notes</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:00</td>
+                            <td>
+                                <span class="activity-title">Visit Jumeirah Beach</span>
+                                <span class="activity-why">Relax.</span>
+                            </td>
+                            <td>3h</td>
+                            <td>Swim.</td>
+                            <td><a href="https://www.google.com/maps?q=25.2300,55.2500" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>12:30</td>
+                            <td>
+                                <span class="activity-title">Lunch</span>
+                                <span class="activity-why">Eat.</span>
+                            </td>
+                            <td>1.5h</td>
+                            <td>Eat.</td>
+                            <td><a href="https://www.google.com/maps?q=25.2300,55.2500" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>14:30</td>
+                            <td>
+                                <span class="activity-title">Explore Al Fahidi Historical Neighbourhood</span>
+                                <span class="activity-why">See culture.</span>
+                            </td>
+                            <td>3h</td>
+                            <td>Explore.</td>
+                            <td><a href="https://www.google.com/maps?q=25.2631,55.3019" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                        <tr>
+                            <td>18:00</td>
+                            <td>
+                                <span class="activity-title">Dinner at Al Fahidi</span>
+                                <span class="activity-why">Eat.</span>
+                            </td>
+                            <td>2h</td>
+                            <td>Eat.</td>
+                            <td><a href="https://www.google.com/maps?q=25.2631,55.3019" class="map-link" target="_blank">View Map</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
