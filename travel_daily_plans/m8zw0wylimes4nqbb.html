@@ -1,0 +1,381 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakuriani Travel Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a5885;
+      --secondary: #e3f2fd;
+      --text: #333333;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: var(--light);
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .day-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    
+    .schedule-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.75rem;
+      position: sticky;
+      top: 0;
+    }
+    
+    .schedule-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+    
+    .activity-cell {
+      font-weight: 600;
+    }
+    
+    .notes {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+    
+    .map-link {
+      display: inline-block;
+      background: var(--secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--primary);
+      transition: background 0.2s;
+    }
+    
+    .map-link:hover {
+      background: #1976d2;
+    }
+    
+    @media (max-width: 768px) {
+      .schedule-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      .meta-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    
+    @media print {
+      body {
+        padding: 0;
+        font-size: 12pt;
+        background: white;
+      }
+      
+      .day-card {
+        page-break-after: always;
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .schedule-table th {
+        background: white;
+        color: black;
+        border-bottom: 2px solid #000;
+      }
+      
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+      }
+      
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Bakuriani Travel Plan</h1>
+    <div class="meta-info">
+      <span><strong>Season:</strong> Winter</span>
+      <span><strong>Generated:</strong> 2024-12-20</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 1: 2024-12-20</h2>
+        <p class="weather">Snowy, -5°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Breakfast at Mimino Restaurant
+              <div class="notes">Try the khachapuri and herbal tea.</div>
+            </td>
+            <td>Traditional Georgian breakfast with mountain views</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7428,43.5282" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>10:30</td>
+            <td class="activity-cell">
+              Skiing at Didveli Ski Resort
+              <div class="notes">Rent equipment at the base of the mountain. Check for discounts online.</div>
+            </td>
+            <td>Modern lifts and varied slopes suitable for all skill levels</td>
+            <td>4h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7463,43.5406" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:30</td>
+            <td class="activity-cell">
+              Lunch at Didveli Cafe
+              <div class="notes">Enjoy some Georgian soup or grilled meat.</div>
+            </td>
+            <td>Convenient on-mountain dining with local cuisine</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7463,43.5406" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>16:00</td>
+            <td class="activity-cell">
+              Relax at the Bakuriani Park
+              <div class="notes">Take a walk around the park and enjoy the winter wonderland.</div>
+            </td>
+            <td>Enjoy the snowy scenery and fresh air</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7415,43.5288" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>18:00</td>
+            <td class="activity-cell">
+              Dinner at Hotel Crystal Restaurant
+              <div class="notes">Reservations recommended, especially on weekends.</div>
+            </td>
+            <td>Upscale dining with panoramic views of Bakuriani</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7412,43.5273" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 2: 2024-12-21</h2>
+        <p class="weather">Partly Cloudy, -3°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Breakfast at Postik Cafe
+              <div class="notes">Try the local honey cake.</div>
+            </td>
+            <td>Popular cafe with delicious pastries and coffee</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7391,43.5312" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>10:30</td>
+            <td class="activity-cell">
+              Snowmobiling Tour
+              <div class="notes">Book in advance to secure a spot. Dress warmly.</div>
+            </td>
+            <td>Explore the surrounding mountains and forests</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7365,43.5251" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td class="activity-cell">
+              Lunch at Taverna Sakhlshi
+              <div class="notes">Try the khinkali (Georgian dumplings).</div>
+            </td>
+            <td>Traditional Georgian food in a cozy atmosphere</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7401,43.5301" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>15:00</td>
+            <td class="activity-cell">
+              Visit the Bakuriani Botanical Garden
+              <div class="notes">Wear comfortable shoes for walking. Check if open during winter season.</div>
+            </td>
+            <td>Beautiful winter scenery and diverse plant life</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7511,43.5201" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:30</td>
+            <td class="activity-cell">
+              Apres-ski at Rooms Hotel Kokhta
+              <div class="notes">Enjoy a mulled wine or local beer.</div>
+            </td>
+            <td>Stylish bar and lounge with great views</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7472,43.5363" 
+                 class="map-link" 
+                 target="_blank"
+                 aria-label="View Map">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="no-print">
+    <div class="pro-tip">
+      <h3>Pro Tip</h3>
+      <p>Check ski resort conditions and snow reports the day before to optimize your skiing experience.</p>
+    </div>
+    <p class="print-footer">Printed from: http://example.com | Generated on: 2024-12-20</p>
+  </footer>
+</body>
+</html>
+```
