@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Plan: Norway</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #333; margin: 0; padding: 15px; line-height: 1.6; }
+        h1, h2, h3 { margin-top: 0; margin-bottom: 0.75em; color: #2a5885; }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; margin-bottom: 1em; }
+        h3 { font-size: 1.2em; }
+        p { margin-top: 0; margin-bottom: 1em; }
+        strong { font-weight: 600; }
+        .season-info { font-style: italic; color: #555; margin-top: -0.5em; margin-bottom: 1.5em; }
+        .day-card { background: white; border-radius: 8px; padding: 15px 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); page-break-inside: avoid; }
+        .pro-tip { background: #eef2f7; border-radius: 8px; padding: 15px 20px; margin-top: 20px; page-break-inside: avoid; }
+        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.95em; }
+        .schedule-table th, .schedule-table td { padding: 10px 8px; border: 1px solid #dee2e6; text-align: left; vertical-align: top; }
+        .schedule-table thead th { background-color: #e9ecef; font-weight: 600; }
+        .schedule-table tbody tr:nth-child(odd) { background-color: #fdfdfd; }
+        .why-text { font-size: 0.9em; color: #555; font-weight: normal; display: block; margin-top: 4px; }
+        .map-link { display: inline-block; background-color: #e3f2fd; padding: 4px 10px; border-radius: 4px; text-decoration: none; color: #1976d2; font-size: 0.9em; white-space: nowrap; }
+        .map-link:hover { background-color: #d1eafd; text-decoration: none; }
+
+        @media screen and (max-width: 768px) {
+            body { padding: 10px; }
+            .day-card, .pro-tip { padding: 12px 15px; }
+            .schedule-table { font-size: 0.9em; }
+            .schedule-table th, .schedule-table td { padding: 8px 6px; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .schedule-table thead { display: none; }
+            .schedule-table, .schedule-table tbody, .schedule-table tr, .schedule-table td { display: block; width: 100%; }
+            .schedule-table tr { margin-bottom: 10px; border: 1px solid #ccc; }
+            .schedule-table td { text-align: right; padding-left: 50%; position: relative; border: none; border-bottom: 1px dotted #eee; }
+            .schedule-table td::before { content: attr(data-label); position: absolute; left: 6px; width: 45%; padding-right: 10px; white-space: nowrap; text-align: left; font-weight: bold; }
+        }
+
+        @media print {
+            body { background-color: #fff; color: #000; font-size: 10pt; padding: 0; margin: 0; }
+            .day-card, .pro-tip { box-shadow: none; border: 1px solid #ccc; padding: 10px; margin-bottom: 15px; }
+            h1, h2, h3 { color: #000; }
+            .schedule-table th, .schedule-table td { border: 1px solid #999; padding: 5px; }
+            .schedule-table thead th { background-color: #eee; }
+            a, .map-link { text-decoration: underline; color: #000; background: none; padding: 0; border: none; }
+            p, td, th { widows: 3; orphans: 3; }
+            h2, h3 { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Trip to Norway</h1>
+    <p class="season-info">Season: Varies (check plan based on specific dates)</p>
+
+    <div class="day-card">
+        <h2>Day 1 - YYYY-MM-DD</h2>
+        <p class="weather">☀️ Weather: Variable, check forecast</p>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                    <th>Duration</th>
+                    <th>Details</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Time">09:00</td>
+                    <td data-label="Activity">
+                        <strong>Explore Oslo's Vigeland Sculpture Park</strong>
+                        <span class="why-text">Unique collection of sculptures in a beautiful park setting.</span>
+                    </td>
+                    <td data-label="Duration">2h</td>
+                    <td data-label="Details">Free entry. Best visited in the morning light.</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=59.9117,10.6944" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Time">11:30</td>
+                    <td data-label="Activity">
+                        <strong>Visit the Norwegian Museum of Cultural History</strong>
+                        <span class="why-text">Experience traditional Norwegian life and architecture.</span>
+                    </td>
+                    <td data-label="Duration">3h</td>
+                    <td data-label="Details">Includes a stave church. Allow time to explore the outdoor exhibits.</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=59.9136,10.6994" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Time">15:00</td>
+                    <td data-label="Activity">
+                        <strong>Lunch at Mathallen Oslo</strong>
+                        <span class="why-text">Indoor food market with diverse options for lunch.</span>
+                    </td>
+                    <td data-label="Duration">1.5h</td>
+                    <td data-label="Details">Try local cheeses or seafood.</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=59.9239,10.7522" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Time">17:00</td>
+                    <td data-label="Activity">
+                        <strong>Explore the Akerselva River</strong>
+                        <span class="why-text">Scenic walk along the river with waterfalls and industrial history.</span>
+                    </td>
+                    <td data-label="Duration">2.5h</td>
+                    <td data-label="Details">Start near Mathallen and walk north.</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=59.9289,10.7500" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Time">19:30</td>
+                    <td data-label="Activity">
+                        <strong>Hidden Gem: Dinner at a traditional Norwegian restaurant in the city center</strong>
+                        <span class="why-text">Experience authentic Norwegian cuisine.</span>
+                    </td>
+                    <td data-label="Duration">2h</td>
+                    <td data-label="Details">Try traditional dishes such as reindeer or lutefisk (seasonal).</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=59.9128,10.7472" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="day-card">
+        <h2>Day 2 - YYYY-MM-DD</h2>
+        <p class="weather">☀️ Weather: Variable, check forecast</p>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                    <th>Duration</th>
+                    <th>Details</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Time">08:00</td>
+                    <td data-label="Activity">
+                        <strong>Train to Bergen</strong>
+                        <span class="why-text">Experience the scenic Bergen Railway, one of the most beautiful train journeys in the world.</span>
+                    </td>
+                    <td data-label="Duration">7h</td>
+                    <td data-label="Details">Book tickets in advance. Consider a 'Norway in a Nutshell' tour which includes the train, Flåm Railway, and a fjord cruise.</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=59.9139,10.7522" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Time">15:00</td>
+                    <td data-label="Activity">
+                        <strong>Explore Bryggen</strong>
+                        <span class="why-text">UNESCO World Heritage Site with colorful wooden buildings.</span>
+                    </td>
+                    <td data-label="Duration">2h</td>
+                    <td data-label="Details">Take photos and explore the shops.</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=60.3967,5.3247" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Time">17:00</td>
+                    <td data-label="Activity">
+                        <strong>Fløibanen funicular to Mount Fløyen</strong>
+                        <span class="why-text">Panoramic views of Bergen and the surrounding fjords.</span>
+                    </td>
+                    <td data-label="Duration">2.5h</td>
+                    <td data-label="Details">Consider hiking down instead of taking the funicular.</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=60.3956,5.3222" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Time">19:30</td>
+                    <td data-label="Activity">
+                        <strong>Dinner at the Bergen Fish Market</strong>
+                        <span class="why-text">Fresh seafood with a lively atmosphere.</span>
+                    </td>
+                    <td data-label="Duration">2h</td>
+                    <td data-label="Details">Choose from a variety of seafood dishes.</td>
+                    <td data-label="Location"><a href="https://www.google.com/maps?q=60.3933,5.3239" target="_blank" class="map-link">View Map</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="day-card">
+        <h2>Day 3 - YYYY-MM-DD</h2>
+        <p class="weather">☀️ Weather: Variable, check forecast</p>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                    <th>Duration</th>
+                    <th>Details</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Time">09:00</td>
+                    <td data-label="Activity">
+                        <strong>Fjord cruise from Bergen</strong>
+                        <span class="why-text">Experience the breathtaking fjords of Norway.</span>
+                    </td>
+                    <td data-label="Duration">4h</td>
+                    <td data-label="Details">Book in advance. Choose a cruise that suits your interests (e.g., Hardangerfjord or Sognefjord).</td>
+                    <td data-label="Location"><a href="https://www.google
