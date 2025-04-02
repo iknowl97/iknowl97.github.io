@@ -1,0 +1,563 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rome Travel Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a5885;
+      --secondary: #e3f2fd;
+      --text: #333333;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: var(--light);
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .day-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    
+    .schedule-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.75rem;
+      position: sticky;
+      top: 0;
+    }
+    
+    .schedule-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+    
+    .activity-cell {
+      font-weight: 600;
+    }
+    
+    .notes {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+    
+    .map-link {
+      display: inline-block;
+      background: var(--secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    
+    @media (max-width: 768px) {
+      .schedule-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      .meta-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    
+    @media print {
+      body {
+        padding: 0;
+        font-size: 12pt;
+        background: white;
+      }
+      
+      .day-card {
+        page-break-after: always;
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .schedule-table th {
+        background: white;
+        color: black;
+        border-bottom: 2px solid #000;
+      }
+      
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+      }
+      
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Rome, Italy Travel Plan</h1>
+    <div class="meta-info">
+      <span><strong>Season:</strong> Varies (adjust plan based on actual season)</span>
+      <span><strong>Generated:</strong> 2024-11-03</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 1: 2024-11-03</h2>
+        <p class="weather">Mild, 18°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Colosseum & Roman Forum
+              <div class="notes">Book tickets online in advance to skip the line. Consider a guided tour.</div>
+            </td>
+            <td>Iconic historical sites.</td>
+            <td>3h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8902,12.4922" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:00</td>
+            <td class="activity-cell">
+              Lunch near the Colosseum
+              <div class="notes">Check out Aroma for a rooftop restaurant with Colosseum views (book in advance) or try a local trattoria for classic Roman pasta.</div>
+            </td>
+            <td>Convenient and varied options.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8919,12.4958" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td class="activity-cell">
+              Palatine Hill
+              <div class="notes">Explore the ruins and enjoy the scenery.</div>
+            </td>
+            <td>Panoramic views of the Roman Forum.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8893,12.4862" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>15:00</td>
+            <td class="activity-cell">
+              Capitoline Museums
+              <div class="notes">Ascend the Michelangelo-designed Cordonata staircase. Consider a guided tour or audio guide for a deeper understanding of the collection.</div>
+            </td>
+            <td>Art and artifacts with stunning city views.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8934,12.4844" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:30</td>
+            <td class="activity-cell">
+              Walk through Monti neighborhood
+              <div class="notes">Explore the side streets for hidden gems and local boutiques. Stop for aperitivo.</div>
+            </td>
+            <td>Charming streets with artisan shops and restaurants.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8958,12.4932" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>19:00</td>
+            <td class="activity-cell">
+              Dinner in Monti
+              <div class="notes">Try Ai Tre Scalini for a classic Roman experience. Reservations recommended.</div>
+            </td>
+            <td>Authentic Roman cuisine.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8958,12.4932" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 2: 2024-11-04</h2>
+        <p class="weather">Sunny, 20°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Vatican City: St. Peter's Basilica & Vatican Museums
+              <div class="notes">Book tickets online well in advance to avoid extremely long queues. Dress code is strictly enforced (shoulders and knees covered). Consider a guided tour to maximize your visit.</div>
+            </td>
+            <td>Religious and artistic masterpieces.</td>
+            <td>4h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.9022,12.4539" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td class="activity-cell">
+              Lunch near Vatican City
+              <div class="notes">Avoid tourist traps; venture a few blocks away from St. Peter's Square for better value. Try pizza al taglio or a panini.</div>
+            </td>
+            <td>Replenish after exploring the Vatican.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.9061,12.4554" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:00</td>
+            <td class="activity-cell">
+              Castel Sant'Angelo
+              <div class="notes">Explore the museum inside and walk along the rooftop terrace for stunning views of Rome.</div>
+            </td>
+            <td>Historic fortress with panoramic views.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.9035,12.4675" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>16:00</td>
+            <td class="activity-cell">
+              Walk along Via della Conciliazione to St. Peter's Square
+              <div class="notes">Enjoy the views and soak in the atmosphere.</div>
+            </td>
+            <td>Grand avenue leading to Vatican City.</td>
+            <td>0.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.9022,12.4539" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>16:30</td>
+            <td class="activity-cell">
+              Piazza Navona
+              <div class="notes">Admire the architecture and street performers.</div>
+            </td>
+            <td>Baroque square with Bernini's Fountain of Four Rivers.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8988,12.4732" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:30</td>
+            <td class="activity-cell">
+              Pantheon
+              <div class="notes">Visit the Pantheon and admire its dome. Free entry.</div>
+            </td>
+            <td>Ancient Roman temple, a marvel of engineering.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8986,12.4769" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>18:30</td>
+            <td class="activity-cell">
+              Dinner near the Pantheon
+              <div class="notes">Armando al Pantheon is a classic choice, but reservations are essential. Alternatively, explore nearby trattorias for pasta and pizza.</div>
+            </td>
+            <td>Enjoy Roman cuisine in a historic setting.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8986,12.4769" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 3: 2024-11-05</h2>
+        <p class="weather">Partly cloudy, 19°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Trevi Fountain
+              <div class="notes">Visit early in the morning to avoid crowds. Toss a coin into the fountain.</div>
+            </td>
+            <td>Iconic baroque fountain.</td>
+            <td>0.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.9009,12.4833" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>09:30</td>
+            <td class="activity-cell">
+              Spanish Steps
+              <div class="notes">Climb the steps for panoramic views. It is no longer allowed to sit on the steps.</div>
+            </td>
+            <td>Famous staircase connecting Piazza di Spagna and Trinità dei Monti church.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.9057,12.4824" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>10:30</td>
+            <td class="activity-cell">
+              Borghese Gallery and Museum
+              <div class="notes">Reservations are mandatory and must be made well in advance. Limited entry times. Explore the surrounding Borghese Gardens afterwards.</div>
+            </td>
+            <td>Art collection in a beautiful villa.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.9135,12.4853" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td class="activity-cell">
+              Lunch in Borghese Gardens
+              <div class="notes">Grab a sandwich or salad at a cafe in the gardens.</div>
+            </td>
+            <td>Relax and enjoy the scenery.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.9135,12.4853" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:00</td>
+            <td class="activity-cell">
+              Hidden Gem: Keyhole view of St. Peter's Basilica (Knights of Malta Keyhole)
+              <div class="notes">Located at the Knights of Malta headquarters on Aventine Hill. Look through the keyhole for a perfectly framed view of St. Peter's Basilica.</div>
+            </td>
+            <td>Unique perspective.</td>
+            <td>0.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8897,12.4772" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:30</td>
+            <td class="activity-cell">
+              Aventine Hill Orange Garden (Giardino degli Aranci)
+              <div class="notes">Relax in the garden and enjoy the views of Rome.</div>
+            </td>
+            <td>Beautiful views and peaceful atmosphere.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8876,12.4767" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>15:30</td>
+            <td class="activity-cell">
+              Trastevere neighborhood
+              <div class="notes">Explore the narrow streets, browse the shops, and enjoy the atmosphere. Visit Basilica di Santa Maria in Trastevere.</div>
+            </td>
+            <td>Charming and lively neighborhood.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8865,12.4703" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:30</td>
+            <td class="activity-cell">
+              Dinner in Trastevere
+              <div class="notes">Trattoria da Enzo al 29 is a popular choice, but be prepared to wait. Many other excellent restaurants in the area. Enjoy some gelato!</div>
+            </td>
+            <td>Authentic Roman cuisine in a charming setting.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.8865,12.4703" 
+                 class="map-link" 
+                 target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="no-print">
+    <div class="pro-tip">
+      <h3>Pro Tip</h3>
+      <p>Purchase a Roma Pass for access to public transportation and free entry to some museums.</p>
+    </div>
+    <p class="print-footer">Printed from: https://example.com | Generated on: 2024-11-03</p>
+  </footer>
+</body>
+</html>
+```
