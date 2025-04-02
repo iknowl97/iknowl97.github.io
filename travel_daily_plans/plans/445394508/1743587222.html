@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Plan: New York City, USA</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; color: #333; margin: 0; padding: 15px; line-height: 1.6; }
+h1, h2, h3 { margin-top: 0; margin-bottom: 0.75em; color: #2a5885; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; margin-bottom: 1em; }
+h3 { font-size: 1.2em; }
+p { margin-top: 0; margin-bottom: 1em; }
+strong { font-weight: 600; }
+.season-info { font-style: italic; color: #555; margin-top: -0.5em; margin-bottom: 1.5em; }
+.day-card { background: white; border-radius: 8px; padding: 15px 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); page-break-inside: avoid; }
+.pro-tip { background: #eef2f7; border-radius: 8px; padding: 15px 20px; margin-top: 20px; page-break-inside: avoid; }
+.schedule-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.95em; }
+th, td { padding: 10px 8px; border: 1px solid #dee2e6; text-align: left; vertical-align: top; }
+thead th { background-color: #e9ecef; font-weight: 600; }
+tbody tr:nth-child(odd) { background-color: #fdfdfd; }
+.why-text { font-size: 0.9em; color: #555; font-weight: normal; display: block; margin-top: 4px; }
+.map-link { display: inline-block; background-color: #e3f2fd; padding: 4px 10px; border-radius: 4px; text-decoration: none; color: #1976d2; font-size: 0.9em; white-space: nowrap; }
+.map-link:hover { background-color: #d1eafd; text-decoration: none; }
+
+@media screen and (max-width: 768px) {
+  body { padding: 10px; }
+  .day-card, .pro-tip { padding: 12px 15px; }
+  .schedule-table { font-size: 0.9em; }
+  th, td { padding: 8px 6px; }
+}
+
+@media screen and (max-width: 480px) {
+  .schedule-table thead { display: none; }
+  .schedule-table, .schedule-table tbody, .schedule-table tr, .schedule-table td { display: block; width: 100%; }
+  .schedule-table tr { margin-bottom: 10px; border: 1px solid #ccc; }
+  .schedule-table td { text-align: right; padding-left: 50%; position: relative; border: none; border-bottom: 1px dotted #eee; }
+  .schedule-table td::before { content: attr(data-label); position: absolute; left: 6px; width: 45%; padding-right: 10px; white-space: nowrap; text-align: left; font-weight: bold; }
+}
+
+@media print {
+  body { background-color: #fff; color: #000; font-size: 10pt; padding: 0; margin: 0; }
+  .day-card, .pro-tip { box-shadow: none; border: 1px solid #ccc; padding: 10px; margin-bottom: 15px; }
+  h1, h2, h3 { color: #000; }
+  th, td { border: 1px solid #999; padding: 5px; }
+  thead th { background-color: #eee; }
+  a, .map-link { text-decoration: underline; color: #000; background: none; padding: 0; border: none; }
+  p, td, th { widows: 3; orphans: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style>
+</head>
+<body>
+<h1>Trip to New York City, USA</h1>
+<p class="season-info">Season: Autumn</p>
+
+<div class="day-card">
+  <h2>Day 1 - 2024-10-27</h2>
+  <p class="weather">☁️ Weather: Cloudy, 15°C</p>
+  <table class="schedule-table">
+    <thead>
+      <tr><th>Time</th><th>Activity</th><th>Duration</th><th>Details</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Time">09:00</td>
+        <td data-label="Activity"><strong>Breakfast at Ess-a-Bagel</strong><span class="why-text">Classic NYC bagels.</span></td>
+        <td data-label="Duration">1h</td>
+        <td data-label="Details">Expect a line, but it moves quickly.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7591,-73.9740" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">10:30</td>
+        <td data-label="Activity"><strong>Visit the Empire State Building</strong><span class="why-text">Iconic views of the city.</span></td>
+        <td data-label="Duration">2h</td>
+        <td data-label="Details">Pre-book tickets online to avoid long queues.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7484,-73.9857" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">13:00</td>
+        <td data-label="Activity"><strong>Lunch at Chelsea Market</strong><span class="why-text">Diverse food options.</span></td>
+        <td data-label="Duration">1.5h</td>
+        <td data-label="Details">Explore the various food vendors.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7426,-74.0039" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">15:00</td>
+        <td data-label="Activity"><strong>Walk the High Line</strong><span class="why-text">Elevated park with unique city views.</span></td>
+        <td data-label="Duration">2h</td>
+        <td data-label="Details">Enjoy the art installations and greenery.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7479,-74.0060" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">17:30</td>
+        <td data-label="Activity"><strong>Explore Greenwich Village</strong><span class="why-text">Historic neighborhood with charming streets.</span></td>
+        <td data-label="Duration">2h</td>
+        <td data-label="Details">Wander through the streets and enjoy the atmosphere.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7311,-73.9994" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">20:00</td>
+        <td data-label="Activity"><strong>Dinner at Minetta Tavern</strong><span class="why-text">Classic old-school tavern.</span></td>
+        <td data-label="Duration">2h</td>
+        <td data-label="Details">Reservations are highly recommended.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7303,-74.0007" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="day-card">
+  <h2>Day 2 - 2024-10-28</h2>
+  <p class="weather">🌧️ Weather: Rainy, 13°C</p>
+  <table class="schedule-table">
+    <thead>
+      <tr><th>Time</th><th>Activity</th><th>Duration</th><th>Details</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Time">09:00</td>
+        <td data-label="Activity"><strong>Breakfast at Russ & Daughters Cafe</strong><span class="why-text">Delicious Jewish deli breakfast.</span></td>
+        <td data-label="Duration">1h</td>
+        <td data-label="Details">Try the classic smoked fish.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7224,-73.9880" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">10:30</td>
+        <td data-label="Activity"><strong>Visit the Metropolitan Museum of Art</strong><span class="why-text">One of the world's largest and finest art museums.</span></td>
+        <td data-label="Duration">3h</td>
+        <td data-label="Details">Focus on a specific section to avoid getting overwhelmed.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7794,-73.9632" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">14:00</td>
+        <td data-label="Activity"><strong>Lunch at The Halal Guys</strong><span class="why-text">Famous for their chicken and gyro over rice.</span></td>
+        <td data-label="Duration">1h</td>
+        <td data-label="Details">Cash only; expect a line.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7614,-73.9625" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">15:30</td>
+        <td data-label="Activity"><strong>Explore Grand Central Terminal</strong><span class="why-text">Architectural marvel and transportation hub.</span></td>
+        <td data-label="Duration">1.5h</td>
+        <td data-label="Details">Look up at the celestial ceiling.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7527,-73.9772" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">17:30</td>
+        <td data-label="Activity"><strong>See a Broadway show</strong><span class="why-text">Experience NYC's theater scene.</span></td>
+        <td data-label="Duration">3h</td>
+        <td data-label="Details">Book tickets in advance.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7589,-73.9851" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">21:00</td>
+        <td data-label="Activity"><strong>Late dinner at Joe Allen</strong><span class="why-text">Theater district institution.</span></td>
+        <td data-label="Duration">1.5h</td>
+        <td data-label="Details">Great for post-show dining.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7590,-73.9863" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="day-card">
+  <h2>Day 3 - 2024-10-29</h2>
+  <p class="weather">☀️ Weather: Sunny, 17°C</p>
+  <table class="schedule-table">
+    <thead>
+      <tr><th>Time</th><th>Activity</th><th>Duration</th><th>Details</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Time">09:00</td>
+        <td data-label="Activity"><strong>Breakfast at Clinton St. Baking Company</strong><span class="why-text">Known for their pancakes.</span></td>
+        <td data-label="Duration">1.5h</td>
+        <td data-label="Details">Expect a wait, especially on weekends.</td>
+        <td data-label="Location"><a href="https://www.google.com/maps?q=40.7221,-73.9865" target="_blank" class="map-link">View Map</a></td>
+      </tr>
+      <tr>
+        <td data-label="Time">11:00</td>
+        <td data-label="Activity"><strong>Visit the Statue of Liberty and Ellis Island</strong><span class="why-text">Iconic landmarks of
