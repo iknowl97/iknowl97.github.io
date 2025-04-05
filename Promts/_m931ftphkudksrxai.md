@@ -1,1 +1,0 @@
-I understand you want to "test with me." To best assist, can you clarify what aspects you'd like to test? Do you want to test my ability to follow instructions, answer questions, generate creative content, or something else? Please provide specific details so I can help effectively.

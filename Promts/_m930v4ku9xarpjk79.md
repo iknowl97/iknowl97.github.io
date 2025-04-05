@@ -1,1 +1,0 @@
-I understand that you want to "test with me." However, I'm not sure what kind of testing you have in mind. Could you please clarify what you'd like to test? Perhaps you could give me a specific task or question. I'm happy to help if you can provide more context.
