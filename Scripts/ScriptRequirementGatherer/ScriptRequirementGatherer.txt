@@ -1,0 +1,10 @@
+Okay, I'm ready. Please provide the details of your task. I need to know *what* the script should do before I can begin crafting it. The more specific you are, the better the script will be.  For example, tell me:
+
+*   **What is the overall goal of the script?** (e.g., "Rename a large number of files based on a pattern," "Download files from a website," "Monitor system resources," "Automate a specific software task")
+*   **What are the specific inputs?** (e.g., "A directory path," "A list of URLs," "A configuration file")
+*   **What are the expected outputs?** (e.g., "Renamed files," "Downloaded files," "Log file," "Screen output")
+*   **What are the error handling requirements?** (e.g., "Should the script retry if a download fails?," "Should it log errors to a file?," "Should it notify the user of any problems?")
+*   **What operating system will the script run on?** (Windows, Linux, macOS) - This is *critical* for language choice.
+*   **Are there any dependencies (e.g., specific software packages)?**
+
+Once you provide this information, I can analyze the requirements, choose the best language for the task (PowerShell, CMD/Batch, Bash, or Python), and create a secure, reliable, and well-formatted script for you.
