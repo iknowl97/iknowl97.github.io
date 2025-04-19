@@ -1,0 +1,577 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altafulla Travel Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a5885;
+      --secondary: #e3f2fd;
+      --text: #333333;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: var(--light);
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .day-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    
+    .schedule-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.75rem;
+      position: sticky;
+      top: 0;
+    }
+    
+    .schedule-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+    
+    .activity-cell {
+      font-weight: 600;
+    }
+    
+    .notes {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+    
+    .map-link {
+      display: inline-block;
+      background: var(--secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    
+    @media (max-width: 768px) {
+      .schedule-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      .meta-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    
+    @media print {
+      body {
+        padding: 0;
+        font-size: 12pt;
+        background: white;
+      }
+      
+      .day-card {
+        page-break-after: always;
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .schedule-table th {
+        background: white;
+        color: black;
+        border-bottom: 2px solid #000;
+      }
+      
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+      }
+      
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Altafulla Travel Plan</h1>
+    <div class="meta-info">
+      <span><strong>Season:</strong> Varies, assume Spring</span>
+      <span><strong>Generated:</strong> 2024-07-15</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 1: 2024-07-15</h2>
+        <p class="weather">Sunny, 28°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Explore Altafulla Old Town
+              <div class="notes">Start at Plaça del Pou and explore the surrounding streets.</div>
+            </td>
+            <td>Wander through the narrow, historic streets and admire the medieval architecture.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1443,1.3811" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>11:30</td>
+            <td class="activity-cell">
+              Visit Altafulla Castle
+              <div class="notes">Check opening times in advance. Guided tours are available.</div>
+            </td>
+            <td>Discover the history of the castle and enjoy panoramic views of the coastline.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1448,1.3802" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td class="activity-cell">
+              Lunch at Voramar Restaurant
+              <div class="notes">Try the paella or the grilled fish.</div>
+            </td>
+            <td>Enjoy fresh seafood with views of the beach.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1468,1.3783" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>15:00</td>
+            <td class="activity-cell">
+              Relax on Altafulla Beach
+              <div class="notes">Bring sunscreen and a beach towel.</div>
+            </td>
+            <td>Enjoy the sun and sand at this beautiful beach.</td>
+            <td>3h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1463,1.3778" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>18:30</td>
+            <td class="activity-cell">
+              Sunset stroll along Botigues de Mar
+              <div class="notes">Great for photo opportunities as the sun sets.</div>
+            </td>
+            <td>Enjoy a relaxing walk along the old fishermen's houses turned restaurants.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1479,1.3791" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 2: 2024-07-16</h2>
+        <p class="weather">Sunny, 29°C</p>
+      </div>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:30</td>
+            <td class="activity-cell">
+              Hike to Tamarit Castle
+              <div class="notes">Wear comfortable shoes. The hike takes about 1.5 hours each way.</div>
+            </td>
+            <td>Enjoy scenic coastal views and explore another historic castle.</td>
+            <td>3h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1369,1.3589" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td class="activity-cell">
+              Lunch at a restaurant in Tamarit
+              <div class="notes">Several restaurants are near Tamarit Castle.</div>
+            </td>
+            <td>Enjoy local cuisine in Tamarit after your hike.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1372,1.3581" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>15:00</td>
+            <td class="activity-cell">
+              Explore Tamarit Castle
+              <div class="notes">Check if guided tours are available.</div>
+            </td>
+            <td>Discover the well-preserved architecture and rich history of this coastal fortress.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1369,1.3589" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:30</td>
+            <td class="activity-cell">
+              Return to Altafulla and relax
+              <div class="notes">Relax by the pool or on the beach.</div>
+            </td>
+            <td>Enjoy some downtime after the day's activities.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1443,1.3811" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>19:30</td>
+            <td class="activity-cell">
+              Dinner at La Toque
+              <div class="notes">Reservations are recommended.</div>
+            </td>
+            <td>Enjoy a delicious meal at this highly-rated restaurant.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1445,1.3805" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 3: 2024-07-17</h2>
+        <p class="weather">Sunny, 30°C</p>
+      </div>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10:00</td>
+            <td class="activity-cell">
+              Visit the Roman Villa of Els Munts
+              <div class="notes">A UNESCO World Heritage Site. Consider joining a guided tour.</div>
+            </td>
+            <td>Explore the remains of a luxurious Roman villa and learn about Roman life in the area.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1322,1.3783" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:30</td>
+            <td class="activity-cell">
+              Lunch at Restaurant Maritim
+              <div class="notes">Offers fresh seafood and traditional Catalan dishes.</div>
+            </td>
+            <td>Enjoy local cuisine with sea views close to the Roman Villa.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1333,1.3786" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:30</td>
+            <td class="activity-cell">
+              Explore the Parc de la Torre d'En Dolça
+              <div class="notes">Good spot for a picnic and enjoying the scenery.</div>
+            </td>
+            <td>Relax in this park located between Altafulla and Torredembarra.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1419,1.3914" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:00</td>
+            <td class="activity-cell">
+              Visit Torredembarra Lighthouse
+              <div class="notes">Check the opening hours. You can climb to the top.</div>
+            </td>
+            <td>Witness panoramic coastal views from the top of the lighthouse.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1447,1.4083" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>19:00</td>
+            <td class="activity-cell">
+              Dinner at Cal Bep
+              <div class="notes">Known for its traditional dishes and cozy atmosphere.</div>
+            </td>
+            <td>Enjoy local Catalan dishes.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1427,1.3818" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 4: 2024-07-18</h2>
+        <p class="weather">Sunny, 29°C</p>
+      </div>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Day trip to Tarragona
+              <div class="notes">Take a bus or train. Start with the Roman Amphitheatre and the Roman Forum.</div>
+            </td>
+            <td>Explore the Roman ruins and historical sites of Tarragona, a UNESCO World Heritage city.</td>
+            <td>8h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1194,1.2581" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>10:00</td>
+            <td class="activity-cell">
+              Visit the Roman Amphitheatre of Tarragona
+              <div class="notes">Imagine the gladiatorial combats and public spectacles that once took place here.</div>
+            </td>
+            <td>Experience the grandeur of this ancient arena overlooking the Mediterranean Sea.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1161,1.2572" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:00</td>
+            <td class="activity-cell">
+              Explore the Tarragona Cathedral
+              <div class="notes">Don't miss the cloister and the Diocesan Museum.</div>
+            </td>
+            <td>Admire the Gothic architecture and religious art in this impressive cathedral.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1192,1.2558" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:30</td>
+            <td class="activity-cell">
+              Lunch in Tarragona Old Town
+              <div class="notes">Explore the Plaça de la Font for various dining options.</div>
+            </td>
+            <td>Enjoy a traditional Catalan meal in the heart of Tarragona.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1194,1.2581" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>15:00</td>
+            <td class="activity-cell">
+              Walk along the Passeig Arqueològic
+              <div class="notes">A pleasant walk offering insights into Tarragona's Roman past.</div>
+            </td>
+            <td>Discover the Roman walls and enjoy panoramic views of the city and the sea.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1197,1.2528" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:00</td>
+            <td class="activity-cell">
+              Return to Altafulla
+              <div class="notes">Relax for the evening.</div>
+            </td>
+            <td>Travel back to Altafulla.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1443,1.3811" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>19:00</td>
+            <td class="activity-cell">
+              Dinner at Sol d'Or
+              <div class="notes">Great local restaurant.</div>
+            </td>
+            <td>Enjoy a relaxed dinner.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1444,1.3805" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 5: 2024-07-19</h2>
+        <p class="weather">Sunny, 27°C</p>
+      </div>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10:00</td>
+            <td class="activity-cell">
+              Visit the Altafulla Market (if applicable)
+              <div class="notes">Check market days and times in advance. Some markets are seasonal.</div>
+            </td>
+            <td>Experience local culture and purchase fresh produce or souvenirs.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1438,1.3815" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>12:30</td>
+            <td class="activity-cell">
+              Enjoy a final swim at Altafulla Beach
+              <div class="notes">Soak up the sun and take a refreshing dip.</div>
+            </td>
+            <td>Last chance to enjoy the Mediterranean Sea.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1463,1.3778" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:30</td>
+            <td class="activity-cell">
+              Farewell Lunch at Restaurant Club Maritim Altafulla
+              <div class="notes">A good place to enjoy a nice meal before departing.</div>
+            </td>
+            <td>Enjoy a final meal with sea views.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1469,1.3779" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:00</td>
+            <td class="activity-cell">
+              Departure
+              <div class="notes">Allow ample time to reach your transport.</div>
+            </td>
+            <td>Prepare for your departure.</td>
+            <td>0h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.1443,1.3811" class="map-link" target="_blank">View Map</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="no-print">
+    <div class="pro-tip">
+      <h3>Pro Tip</h3>
+      <p>Visit during the medieval market for a unique local experience, usually held in July.</p>
+    </div>
+    <p class="print-footer">Printed from: current_url | Generated on: current_date </p>
+  </footer>
+</body>
+</html>
+```
