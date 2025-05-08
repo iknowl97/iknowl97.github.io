@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-TF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивный План Проектов</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Slightly off-white background */
+        }
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.25rem;
+            border-radius: 0.5rem; /* md */
+            font-weight: 500; /* medium */
+            color: #4b5563; /* gray-600 */
+            background-color: #e5e7eb; /* gray-200 */
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .tab-button:hover {
+            background-color: #d1d5db; /* gray-300 */
+        }
+        .tab-button.active-tab {
+            background-color: #3b82f6; /* blue-500 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .project-section {
+            background-color: #ffffff; /* white */
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.75rem; /* lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .collapsible-section {
+            margin-bottom: 1.5rem; /* mb-6 */
+            background-color: #f9fafb; /* gray-50 */
+            padding: 1rem; /* p-4 */
+            border-radius: 0.5rem; /* md */
+            border: 1px solid #e5e7eb; /* gray-200 */
+        }
+        .collapsible-header {
+            font-size: 1.125rem; /* xl */
+            font-weight: 600; /* semibold */
+            color: #1f2937; /* gray-800 */
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background-color: #f3f4f6; /* gray-100 */
+            border-radius: 0.375rem; /* sm */
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .collapsible-header:hover {
+            background-color: #e5e7eb; /* gray-200 */
+        }
+        .collapsible-header svg {
+            transition: transform 0.3s ease;
+        }
+        .collapsible-header.open svg {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            margin-top: 1rem; /* mt-4 */
+            color: #4b5563; /* gray-600 */
+            padding-left: 1rem; /* pl-4 */
+            border-left: 2px solid #3b82f6; /* blue-500 */
+        }
+        .collapsible-content ul {
+            list-style-type: disc;
+            margin-left: 1.25rem; /* ml-5 */
+        }
+        .collapsible-content li {
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Интерактивный План Проектов</h1>
+            <p class="text-lg text-gray-600 mt-2">CryptoNews Канал и AlgoBot Трейдер</p>
+        </header>
+
+        <div class="flex flex-wrap justify-center mb-8 space-x-2 sm:space-x-4">
+            <button id="btnCryptoNews" class="tab-button active-tab">CryptoNews Канал</button>
+            <button id="btnAlgoBot" class="tab-button">AlgoBot Трейдер</button>
+            <button id="btnTeam" class="tab-button">Команда и Роли</button>
+        </div>
+
+        <div id="projectContent">
+            <div id="cryptoNewsSection" class="project-section">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">Новостной Telegram Канал "CryptoNews"</h2>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>Общее описание и Цели</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <p><strong>Цель:</strong> Создать автономную систему для сбора, обработки (с помощью ИИ) и публикации отобранных криптоновостей в Telegram-канал. Контент должен быть адаптирован для широкой аудитории, интересующейся криптовалютами, и отформатирован для удобного чтения в Telegram.</p>
+                        <p><strong>Роль в общем видении:</strong> Служить маркетинговым каналом и каналом для привлечения аудитории для проекта AlgoBot.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>Техническое Задание (ТЗ)</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <ul>
+                            <li><strong>Платформа:</strong> n8n (инструмент автоматизации рабочих процессов), предпочтительно self-hosted для автономной, долгосрочной работы.</li>
+                            <li><strong>Источники данных:</strong> Новостные данные из различных надежных крипто-источников, включая RSS-ленты и API (например, CryptoPanic).</li>
+                            <li><strong>Обработка (ИИ в n8n):</strong>
+                                <ul>
+                                    <li>Фильтрация и отбор новостей по заданным критериям (например, исключение SCAM-проектов).</li>
+                                    <li>Краткое изложение статей на русском языке.</li>
+                                    <li>Анализ и определение тональности новостей (например, с помощью GPT-4o).</li>
+                                    <li>Форматирование обработанного контента для Telegram, включая добавление релевантных хештегов, ссылок (если позволяет форматирование) и визуальных элементов (эмодзи). Поддерживается HTML-форматирование (<code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;a&gt;</code>).</li>
+                                    <li>Возможная интеграция инструментов веб-поиска или базы знаний для улучшенной обработки или создания контента.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Публикация:</strong> Отформатированные новостные посты в указанный Telegram-канал с использованием узла Telegram Bot. Обработка потенциальных ограничений по длине сообщений путем их разделения. Имитация действия "печатает" для более естественного восприятия.</li>
+                            <li><strong>Автоматизация:</strong> Запуск сбора и публикации новостей по расписанию (например, каждые 30 минут или час).</li>
+                            <li><strong>Надежность:</strong> Внедрение надежной обработки ошибок с уведомлениями. Настройка мониторинга выполнения рабочих процессов.</li>
+                            <li><strong>Обслуживаемость:</strong> Использование модульных рабочих процессов с понятными именами и тегами. Внедрение автоматического контроля версий и резервного копирования рабочих процессов в репозиторий GitHub.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>План Действий</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <ol class="list-decimal ml-5">
+                            <li><strong>Начальная настройка:</strong>
+                                <ul>
+                                    <li>Убедиться, что n8n запущен. Определиться с будущим хостингом (self-hosted или облачный).</li>
+                                    <li>Создать Telegram-бота через @BotFather и получить API-токен.</li>
+                                    <li>Получить необходимые API-ключи для источников новостей и моделей ИИ (OpenAI, Anthropic).</li>
+                                    <li>Безопасно настроить все учетные данные в n8n.</li>
+                                    <li>Настроить приватный репозиторий GitHub для резервного копирования рабочих процессов.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Разработка основных рабочих процессов:</strong>
+                                <ul>
+                                    <li>Спланировать модульные рабочие процессы (Сбор, Обработка ИИ, Публикация).</li>
+                                    <li>Создать рабочий процесс сбора новостей: настроить триггеры, RSS-ленты, HTTP-запросы к источникам. Реализовать начальную фильтрацию.</li>
+                                    <li>Создать рабочий процесс обработки ИИ: определить роли агентов и последовательность. Создать промпты для агентов фильтрации, суммаризации, анализа тональности и форматирования. Интегрировать узлы моделей ИИ. Настроить поток данных между агентами/узлами.</li>
+                                    <li>Создать рабочий процесс публикации в Telegram: настроить узел Telegram Bot с Chat ID. Сопоставить обработанный и отформатированный контент с телом сообщения. При необходимости добавить разделение сообщений или действия в чате.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Системные рабочие процессы и доработка:</strong>
+                                <ul>
+                                    <li>Создать автоматическое резервное копирование рабочих процессов в GitHub. Настроить для этого API-ключ n8n.</li>
+                                    <li>Реализовать рабочие процессы обработки ошибок с использованием триггера ошибок.</li>
+                                    <li>Протестировать каждый модуль рабочего процесса и весь процесс от начала до конца.</li>
+                                    <li>Уточнить промпты ИИ на основе качества вывода.</li>
+                                    <li>При необходимости оптимизировать рабочие процессы для повышения производительности.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Развертывание и мониторинг:</strong>
+                                <ul>
+                                    <li>При переходе с локальной версии развернуть n8n в выбранной серверной среде.</li>
+                                    <li>Активировать автономные триггеры по расписанию.</li>
+                                    <li>При необходимости настроить внешний мониторинг или логирование.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>План Ведения Канала</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <ul>
+                            <li><strong>Основной источник контента:</strong> Автоматические новостные посты, генерируемые n8n-ботом (сводки, тональность, форматирование, хештеги). Частота определяется триггером расписания n8n.</li>
+                            <li><strong>Дополнительный контент:</strong> Ручные посты: курируемый человеком контент, более глубокий анализ, рыночные комментарии, мнения, образовательный контент, реакция на текущие события, не полностью освещенные ботом.</li>
+                            <li><strong>Вовлечение аудитории:</strong> Опросы, сессии вопросов и ответов, дискуссии.</li>
+                            <li><strong>Продвижение AlgoBot:</strong> Регулярно запланированные посты, продвигающие продукт AlgoBot.
+                                <ul>
+                                    <li>Демонстрация результатов бэктестинга (например, графики доходности).</li>
+                                    <li>Объяснение функций и стратегического подхода AlgoBot.</li>
+                                    <li>Публикация отзывов пользователей (при наличии).</li>
+                                    <li>Призывы к действию (например, "Узнать больше", "Зарегистрироваться").</li>
+                                    <li>Публикация руководств по доступу или использованию AlgoBot.</li>
+                                </ul>
+                            </li>
+                            <li><strong>График публикаций:</strong> Смешивание автоматических постов с ручным/промо-контентом. Определение оптимального времени для публикаций на основе активности аудитории.</li>
+                            <li><strong>Взаимодействие с сообществом:</strong> Ответы на комментарии и вопросы в канале.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>Необходимые Файлы</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <ul>
+                            <li>JSON-файлы рабочих процессов n8n (.json), содержащие логику сбора новостей, ИИ-обработки, публикации в Telegram, обработки ошибок и резервного копирования.</li>
+                            <li>Файлы конфигурации (хотя n8n часто управляет учетными данными внутри, могут использоваться специфические переменные окружения).</li>
+                            <li>Файлы документации (опционально, но рекомендуется) для настройки, промптов и объяснений рабочих процессов.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="algoBotSection" class="project-section hidden">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">AlgoBot Трейдер</h2>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>Общее описание и Цели</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <p><strong>Цель:</strong> Разработать "умный сервис" для финансового взаимодействия, сфокусированный на автоматизированных стратегиях криптотрейдинга. Этот продукт будет продвигаться через новостной Telegram-канал CryptoNews.</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>Техническое Задание (ТЗ)</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <ul>
+                            <li><strong>Платформа:</strong> Язык программирования Python, использование специализированных библиотек для трейдинга и анализа данных.</li>
+                            <li><strong>Основной функционал:</strong>
+                                <ul>
+                                    <li>Безопасное подключение к API криптовалютных бирж (например, Binance). Требуется обработка API-ключей и секретов с соответствующими разрешениями (например, спотовая и маржинальная торговля).</li>
+                                    <li>Получение исторических и реальных рыночных данных (цены, объемы) для выбранных торговых пар (например, BTCUSDT, ETHUSDT).</li>
+                                    <li>Реализация одной или нескольких автоматизированных торговых стратегий на основе технических индикаторов (примеры: пересечение скользящих средних, Bollinger Bands). Стратегия должна определять четкие сигналы входа и выхода.</li>
+                                    <li>Исполнение ордеров на покупку и продажу на бирже на основе сигналов стратегии.</li>
+                                    <li>Управление торговыми позициями и отслеживание прибыли/убытков.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Практики разработки:</strong>
+                                <ul>
+                                    <li>Использование структурированной кодовой базы, разделение ответственностей (конфигурация, индикаторы, логика стратегии, исполнение).</li>
+                                    <li>Использование надежного фреймворка для бэктестинга (упоминается Backtrader) для тестирования стратегий на исторических данных перед реальным развертыванием. Анализ результатов бэктестинга (например, прибыльность).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Эксплуатационные требования:</strong>
+                                <ul>
+                                    <li>Безопасная обработка API-ключей и пользовательских данных.</li>
+                                    <li>Логирование торговой активности, ошибок и метрик производительности.</li>
+                                    <li>Надежная обработка ошибок для потенциальных проблем с API, неожиданных рыночных условий и т.д.</li>
+                                    <li>Требуется стабильное и безопасное окружение для непрерывной работы (например, облачный сервер) [подразумевается для реальной торговли].</li>
+                                </ul>
+                            </li>
+                            <li><strong>Связь с новостным каналом (концептуальная):</strong> Новостной канал служит для продвижения. Прямой технической интеграции в источниках не описано, но продукт AlgoBot потребует:
+                                <ul>
+                                    <li>Способа доступа или взаимодействия пользователей с ним (например, веб-интерфейс, отдельный бот, подписка на сервис - это не детализировано в предоставленных источниках).</li>
+                                    <li>Материалов, демонстрирующих его производительность (потенциально с использованием результатов бэктестинга) и объясняющих его функции, для публикации в новостном канале.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>План Действий</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <ol class="list-decimal ml-5">
+                            <li><strong>Настройка окружения:</strong>
+                                <ul>
+                                    <li>Установить Python и среду разработки (например, PyCharm).</li>
+                                    <li>Установить необходимые библиотеки Python (например, backtrader_binance, Backtrader, pandas, matplotlib).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Интеграция с биржей и данные:</strong>
+                                <ul>
+                                    <li>Получить API-ключи от целевой биржи (Binance) с необходимыми разрешениями.</li>
+                                    <li>Безопасно настроить API-ключи в коде проекта (например, в файле Config.py).</li>
+                                    <li>Разработать код для получения исторических и реальных рыночных данных через API биржи.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Разработка и бэктестинг стратегии:</strong>
+                                <ul>
+                                    <li>Выбрать или разработать торговую стратегию на основе желаемых индикаторов.</li>
+                                    <li>Реализовать логику стратегии на Python.</li>
+                                    <li>Интегрировать стратегию и данные во фреймворк Backtrader.</li>
+                                    <li>Провести тщательный бэктестинг, проанализировать результаты и уточнить параметры стратегии.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Подготовка к реальной торговле (с особой осторожностью):</strong>
+                                <ul>
+                                    <li>Адаптировать код для реальной торговли (подключение к реальным потокам данных и использование интерфейса брокера).</li>
+                                    <li>Реализовать детальное логирование и обработку ошибок, специфичные для реальной торговли.</li>
+                                    <li>Внедрить элементы управления рисками (например, стоп-лосс ордера, определение размера позиции - источники предоставляют базовое определение размера, но не полное управление рисками).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Развертывание и мониторинг:</strong>
+                                <ul>
+                                    <li>Развернуть код торгового бота в безопасной и стабильной серверной среде [подразумевается для непрерывной реальной торговли].</li>
+                                    <li>Непрерывно отслеживать реальную производительность и стабильность системы [подразумевается].</li>
+                                    <li>При необходимости поддерживать и обновлять код и библиотеки [подразумевается].</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>План Управления AlgoBot</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <ul>
+                            <li><strong>Мониторинг производительности:</strong> Непрерывно отслеживать торговую производительность AlgoBot в реальном времени. Отслеживать ключевые метрики (прибыль/убыток, просадка, процент выигрышных сделок). Логировать все сделки и системные события.</li>
+                            <li><strong>Оценка и доработка стратегии:</strong> Регулярно пересматривать эффективность торговой стратегии на основе реальной производительности и рыночных условий. Проводить дополнительный бэктестинг с новыми данными. При необходимости вносить коррективы в параметры или логику стратегии.</li>
+                            <li><strong>Техническое обслуживание:</strong> Обеспечивать стабильность, безопасность и достаточность ресурсов сервера, на котором размещен бот. Отслеживать логи на предмет ошибок или предупреждений. Применять обновления операционной системы, Python и библиотек.</li>
+                            <li><strong>Безопасность:</strong> Регулярно пересматривать практики безопасности, особенно в отношении управления API-ключами. Внедрять необходимые меры безопасности на сервере.</li>
+                            <li><strong>Управление рисками:</strong> Непрерывно отслеживать рыночную волатильность и подверженность бота рискам. Быть готовым к ручному вмешательству при необходимости (хотя функции полного ручного управления не детализированы в источниках).</li>
+                            <li><strong>Управление пользователями/Поддержка (если применимо):</strong> Если AlgoBot является сервисом, с которым взаимодействуют пользователи, спланировать процесс регистрации пользователей, контроля доступа и поддержки [подразумевается, но взаимодействие с пользователем не детализировано в источниках].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>Необходимые Файлы</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <ul>
+                            <li>Файлы скриптов Python (.py), содержащие логику торговой стратегии, взаимодействие с API биржи, обработку данных, настройку бэктестинга и основную логику выполнения.</li>
+                            <li>Файл конфигурации (Config.py или аналогичный) для безопасного хранения API-ключей и параметров стратегии.</li>
+                            <li>Файл зависимостей (requirements.txt), перечисляющий необходимые библиотеки Python.</li>
+                            <li>Общий для обоих проектов: Git-репозиторий (например, на GitHub) для хранения и контроля версий всего кода и файлов рабочих процессов.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="teamSection" class="project-section hidden">
+                <h2 class="text-2xl font-bold text-gray-700 mb-6 text-center">Команда и Роли</h2>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>1. Проектный Менеджер</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <p><strong>Роль:</strong> Контроль всего жизненного цикла проекта, координация усилий между разработкой новостного бота и алгобота, управление сроками, ресурсами и рисками. Обеспечение соответствия двух проектов общей цели продвижения AlgoBot через новостной канал.</p>
+                        <p><strong>ТЗ (Задачи на основе источников):</strong> Определять этапы проекта на основе планов действий. Облегчать коммуникацию между командами разработчиков. Отслеживать прогресс и устранять препятствия. Обеспечивать наличие необходимых учетных данных и инфраструктуры. Облегчать точки интеграции (например, обеспечивать доступность маркетинговых материалов от команды разработки AlgoBot для контент-менеджера).</p>
+                    </div>
+                </div>
+
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>2. Специалист по Автоматизации / n8n Разработчик</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <p><strong>Роль:</strong> Проектирование, создание и поддержка рабочих процессов n8n для проекта Crypto News Telegram Channel.</p>
+                        <p><strong>ТЗ (Задачи на основе источников):</strong>
+                            <ul>
+                                <li>Настройка и конфигурирование экземпляра n8n (локально или на сервере).</li>
+                                <li>Установка и настройка необходимых узлов n8n (Telegram, RSS, HTTP Request, OpenAI, AI Agent и т.д.).</li>
+                                <li>Безопасное добавление и управление учетными данными в n8n.</li>
+                                <li>Проектирование, создание и отладка рабочих процессов сбора новостей из различных источников.</li>
+                                <li>Проектирование, создание и отладка рабочих процессов ИИ-обработки, включая настройку конвейеров AI Agent и потока данных.</li>
+                                <li>Реализация логики ИИ-агентов с использованием промптов (системных и пользовательских сообщений).</li>
+                                <li>Настройка и отладка рабочего процесса публикации в Telegram.</li>
+                                <li>Реализация рабочих процессов обработки ошибок.</li>
+                                <li>Настройка и поддержка автоматического резервного копирования рабочих процессов в GitHub.</li>
+                                <li>Мониторинг выполнения и производительности рабочих процессов в n8n.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                 <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>3. Python Разработчик / Алготрейдер</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <p><strong>Роль:</strong> Разработка, тестирование и поддержка Python-кода для функциональности трейдинга AlgoBot.</p>
+                        <p><strong>ТЗ (Задачи на основе источников):</strong>
+                            <ul>
+                                <li>Настройка среды разработки Python и установка необходимых библиотек.</li>
+                                <li>Интеграция с API криптовалютных бирж (Binance) для получения данных и исполнения ордеров.</li>
+                                <li>Реализация торговых стратегий на основе технических индикаторов.</li>
+                                <li>Разработка и выполнение бэктестов с использованием исторических данных. Анализ результатов бэктестинга.</li>
+                                <li>Реализация логики реальной торговли, обработка состояний ордеров и позиций.</li>
+                                <li>Реализация логирования и обработки ошибок в Python-скрипте.</li>
+                                <li>Безопасное управление API-ключами в конфигурации кода.</li>
+                                <li>(Опционально, но рекомендуется для продакшена): Реализация надежных функций управления рисками.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>4. AI Специалист / Промпт-Инженер</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <p><strong>Роль:</strong> Фокус на эффективном использовании и настройке моделей ИИ, особенно для обработки новостей в Telegram-боте. Может также консультировать по интеграции ИИ в AlgoBot или пользовательский интерфейс.</p>
+                        <p><strong>ТЗ (Задачи на основе источников):</strong>
+                            <ul>
+                                <li>Разработка, тестирование и уточнение подробных промптов (системных и пользовательских сообщений) для ИИ-агентов в рабочем процессе обработки новостей (фильтрация, суммаризация, тональность, форматирование).</li>
+                                <li>Выбор подходящих моделей ИИ (GPT-4o, Claude 3.5 и т.д.) для конкретных задач.</li>
+                                <li>Настройка поведения ИИ для достижения желаемого качества и стиля вывода для постов в Telegram.</li>
+                                <li>(Опционально): Консультирование по использованию ИИ для анализа рынка в AlgoBot или для создания интерактивных элементов (например, диалогового интерфейса).</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>5. Контент-Менеджер / Комьюнити-Менеджер (Telegram Канал)</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <p><strong>Роль:</strong> Управление контентом Telegram-канала и взаимодействием с аудиторией.</p>
+                        <p><strong>ТЗ (Задачи на основе источников, плюс потребности в управлении каналом):</strong>
+                            <ul>
+                                <li>Контроль и проверка автоматического контента, публикуемого n8n-ботом.</li>
+                                <li>Создание и публикация ручных постов, рыночного анализа, образовательного контента и т.д., дополняющих автоматическую ленту.</li>
+                                <li>Взаимодействие с подписчиками канала, ответы на вопросы, стимулирование обсуждений в сообществе.</li>
+                                <li>Реализация плана продвижения AlgoBot: создание промо-материалов на основе информации от команды AlgoBot (результаты бэктестинга, описание функций), планирование промо-постов и отслеживание их эффективности.</li>
+                                <li>Управление настройками Telegram-канала и, возможно, доступом/разрешениями пользователей.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="collapsible-section">
+                    <button class="collapsible-header">
+                        <span>6. DevOps Специалист (Рекомендуется для Self-Hosting/Production)</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="collapsible-content hidden">
+                        <p><strong>Роль:</strong> Настройка, развертывание, мониторинг и поддержка инфраструктуры как для экземпляра n8n, так и для Python-кода AlgoBot в производственной среде (например, облачный сервер).</p>
+                        <p><strong>ТЗ (Задачи на основе источников):</strong>
+                            <ul>
+                                <li>Конфигурирование серверных сред (Linux, Docker и т.д.), подходящих для хостинга n8n и Python-приложений.</li>
+                                <li>Развертывание и управление приложением n8n.</li>
+                                <li>Развертывание и управление Python-приложением AlgoBot (например, с использованием менеджеров процессов, таких как PM2 или Docker).</li>
+                                <li>Внедрение решений для мониторинга состояния сервера, статуса приложений и производительности.</li>
+                                <li>Обеспечение безопасности системы, включая брандмауэры, обновления и безопасный доступ.</li>
+                                <li>Управление резервным копированием на уровне инфраструктуры.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btnCryptoNews = document.getElementById('btnCryptoNews');
+        const btnAlgoBot = document.getElementById('btnAlgoBot');
+        const btnTeam = document.getElementById('btnTeam');
+
+        const cryptoNewsSection = document.getElementById('cryptoNewsSection');
+        const algoBotSection = document.getElementById('algoBotSection');
+        const teamSection = document.getElementById('teamSection');
+
+        const tabButtons = [btnCryptoNews, btnAlgoBot, btnTeam];
+        const sections = [cryptoNewsSection, algoBotSection, teamSection];
+
+        function showSection(sectionToShow, buttonToActivate) {
+            sections.forEach(section => section.classList.add('hidden'));
+            tabButtons.forEach(button => button.classList.remove('active-tab'));
+
+            sectionToShow.classList.remove('hidden');
+            buttonToActivate.classList.add('active-tab');
+        }
+
+        btnCryptoNews.addEventListener('click', () => showSection(cryptoNewsSection, btnCryptoNews));
+        btnAlgoBot.addEventListener('click', () => showSection(algoBotSection, btnAlgoBot));
+        btnTeam.addEventListener('click', () => showSection(teamSection, btnTeam));
+
+        // Collapsible sections
+        const collapsibles = document.querySelectorAll('.collapsible-header');
+        collapsibles.forEach(collapsible => {
+            collapsible.addEventListener('click', function() {
+                this.classList.toggle('open');
+                const content = this.nextElementSibling;
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        });
+
+        // Initially show CryptoNews section
+        showSection(cryptoNewsSection, btnCryptoNews);
+    </script>
+
+</body>
+</html>
