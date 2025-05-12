@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tbilisi, Georgia Itinerary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a5885;
+      --primary-light: #3a6ea5;
+      --secondary: #e3f2fd;
+      --accent: #d4a762;
+      --text: #333333;
+      --text-light: #555555;
+      --light: #f8f9fa;
+      --white: #ffffff;
+      --border: #e0e0e0;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--light);
+      -webkit-font-smoothing: antialiased;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    /* Header Styles */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+    
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--accent);
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+    
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .meta-icon {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    
+    /* Day Card Styles */
+    .day-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .day-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--primary);
+    }
+    
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .day-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    
+    .day-date {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    
+    .weather {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--secondary);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    /* Schedule Table Styles */
+    .schedule-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      min-width: 600px;
+    }
+    
+    .schedule-table th {
+      background: var(--primary);
+      color: var(--white);
+      text-align: left;
+      padding: 1rem;
+      font-weight: 500;
+      position: sticky;
+      top: 0;
+    }
+    
+    .schedule-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    
+    .schedule-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .schedule-table tr:hover {
+      background-color: rgba(0,0,0,0.02);
+    }
+    
+    .time-cell {
+      font-weight: 500;
+      white-space: nowrap;
+      color: var(--primary);
+    }
+    
+    .activity-cell {
+      font-weight: 500;
+    }
+    
+    .why-cell {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+    
+    .duration-cell {
+      white-space: nowrap;
+    }
+    
+    .notes {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+      line-height: 1.4;
+      font-style: italic;
+    }
+    
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--secondary);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+    
+    .map-link:hover {
+      background: var(--primary-light);
+      color: var(--white);
+    }
+    
+    /* Pro Tip Section */
+    .pro-tip {
+      background: var(--secondary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      border-left: 4px solid var(--accent);
+    }
+    
+    .pro-tip h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .pro-tip h3::before {
+      content: '💡';
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    
+    /* Responsive Breakpoints */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .day-card {
+        padding: 1.5rem;
+      }
+      
+      .day-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      
+      .schedule-table th,
+      .schedule-table td {
+        padding: 0.75rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .meta-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .day-card {
+        padding: 1.25rem;
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      body {
+        padding: 0;
+        font-size: 12pt;
+        background: white;
+      }
+      
+      .container {
+        padding: 1cm;
+        max-width: 100%;
+      }
+      
+      .day-card {
+        page-break-after: always;
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .schedule-table th {
+        background: white;
+        color: black;
+        border-bottom: 2px solid #000;
+      }
+      
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+      }
+      
+      .no-print {
+        display: none;
+      }
+      
+      .pro-tip {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Tbilisi, Georgia Travel Plan</h1>
+      <p class="subtitle">Your perfect 2-day itinerary in the heart of Georgia</p>
+      <div class="meta-info">
+        <span class="meta-item">
+          <span class="meta-icon">🌦️</span>
+          <span>Season: Varies (Assume Spring/Autumn for moderate weather)</span>
+        </span>
+        <span class="meta-item">
+          <span class="meta-icon">📅</span>
+          <span>Generated: April 2024</span>
+        </span>
+      </div>
+    </header>
+
+    <main>
+      <!-- Day 1 -->
+      <section class="day-card">
+        <div class="day-header">
+          <div>
+            <h2 class="day-title">Day 1</h2>
+            <p class="day-date">2024-04-20</p>
+          </div>
+          <span class="weather">☀️ Sunny, 18°C</span>
+        </div>
+        
+        <div class="schedule-container">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Details</th>
+                <th>Duration</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="time-cell">09:00</td>
+                <td class="activity-cell">
+                  Breakfast at Puris Guliashvili
+                  <div class="notes">Try the Lobiani (bean-filled bread).</div>
+                </td>
+                <td class="why-cell">Authentic Georgian bakery with fresh bread and pastries.</td>
+                <td class="duration-cell">1h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.6939,44.8024" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">10:30</td>
+                <td class="activity-cell">
+                  Explore Old Tbilisi
+                  <div class="notes">Look for the Leghvtakhevi Waterfall tucked away in the old town.</div>
+                </td>
+                <td class="why-cell">Wander through the charming streets and discover hidden courtyards.</td>
+                <td class="duration-cell">2h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.6917,44.8006" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">12:30</td>
+                <td class="activity-cell">
+                  Lunch at Machakhela
+                  <div class="notes">Try the Khachapuri (cheese-filled bread) and Khinkali (soup dumplings).</div>
+                </td>
+                <td class="why-cell">Traditional Georgian cuisine with a modern twist.</td>
+                <td class="duration-cell">1.5h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.6931,44.7986" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">14:30</td>
+                <td class="activity-cell">
+                  Narikala Fortress
+                  <div class="notes">Take the cable car up for easier access.</div>
+                </td>
+                <td class="why-cell">Ancient fortress offering panoramic views of Tbilisi.</td>
+                <td class="duration-cell">2h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.6853,44.8033" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">16:30</td>
+                <td class="activity-cell">
+                  Sulfur Baths (Abanotubani)
+                  <div class="notes">Book a private room for a more comfortable experience. Gulo's Thermal Spa is recommended.</div>
+                </td>
+                <td class="why-cell">Experience the traditional sulfur baths for relaxation and healing.</td>
+                <td class="duration-cell">2h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.6842,44.8048" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">19:00</td>
+                <td class="activity-cell">
+                  Dinner at Barbarestan
+                  <div class="notes">Reservations are highly recommended.</div>
+                </td>
+                <td class="why-cell">Upscale restaurant serving dishes based on a 19th-century Georgian cookbook.</td>
+                <td class="duration-cell">2.5h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.6971,44.7904" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Day 2 -->
+      <section class="day-card">
+        <div class="day-header">
+          <div>
+            <h2 class="day-title">Day 2</h2>
+            <p class="day-date">2024-04-21</p>
+          </div>
+          <span class="weather">⛅ Partly Cloudy, 19°C</span>
+        </div>
+        
+        <div class="schedule-container">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Details</th>
+                <th>Duration</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="time-cell">09:00</td>
+                <td class="activity-cell">
+                  Breakfast at Entree
+                  <div class="notes">Try the croissants or the Quiche Lorraine.</div>
+                </td>
+                <td class="why-cell">French-style bakery and cafe with delicious pastries and coffee.</td>
+                <td class="duration-cell">1h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.7008,44.7891" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">10:30</td>
+                <td class="activity-cell">
+                  Dry Bridge Market
+                  <div class="notes">Bargaining is expected.</div>
+                </td>
+                <td class="why-cell">Browse through antiques, souvenirs, and unique Georgian crafts.</td>
+                <td class="duration-cell">2h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.7039,44.7944" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">12:30</td>
+                <td class="activity-cell">
+                  Lunch at Keto and Kote
+                  <div class="notes">Try the Ojakhuri (pork with potatoes) and the Georgian salads.</div>
+                </td>
+                <td class="why-cell">Restaurant with a beautiful terrace offering stunning views of Tbilisi.</td>
+                <td class="duration-cell">1.5h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.6902,44.7925" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">14:30</td>
+                <td class="activity-cell">
+                  Georgian National Museum
+                  <div class="notes">Focus on the gold and jewelry collection.</div>
+                </td>
+                <td class="why-cell">Learn about the history and culture of Georgia through its impressive collection of artifacts.</td>
+                <td class="duration-cell">2.5h</td>
+                <td>
+                  <a href="https://maps.google.com/?q=41.6958,44.7932" class="map-link" target="_blank">
+                    <span>📍</span> View Map
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="time-cell">17:00</td>
+                <td class="activity-cell">
+                  Funicular to Mtatsminda Park
+                 
