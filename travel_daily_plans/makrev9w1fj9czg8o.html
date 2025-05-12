@@ -1,0 +1,479 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tbilisi Travel Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a5885;
+      --secondary: #e3f2fd;
+      --text: #333333;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: var(--light);
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .day-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    
+    .schedule-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.75rem;
+      position: sticky;
+      top: 0;
+    }
+    
+    .schedule-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+    
+    .activity-cell {
+      font-weight: 600;
+    }
+    
+    .notes {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.25rem;
+    }
+    
+    .map-link {
+      display: inline-block;
+      background: var(--secondary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    
+    @media (max-width: 768px) {
+      .schedule-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      .meta-info {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    
+    @media print {
+      body {
+        padding: 0;
+        font-size: 12pt;
+        background: white;
+      }
+      
+      .day-card {
+        page-break-after: always;
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .schedule-table th {
+        background: white;
+        color: black;
+        border-bottom: 2px solid #000;
+      }
+      
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+      }
+      
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Tbilisi Travel Plan</h1>
+    <div class="meta-info">
+      <span><strong>Season:</strong> Autumn</span>
+      <span><strong>Generated:</strong> 2024-10-27</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 1: 2024-10-27</h2>
+        <p class="weather">Partly Cloudy, 18°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Breakfast at Gabriadze Cafe
+              <div class="notes">Try the local cheese pastries.</div>
+            </td>
+            <td>Charming cafe near the Marionette Theater, known for its delicious pastries and coffee.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6928,44.8003" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>10:30</td>
+            <td class="activity-cell">
+              Explore the Old Town
+              <div class="notes">Visit the Narikala Fortress for panoramic views.</div>
+            </td>
+            <td>Wander through the historical heart of Tbilisi, admiring the traditional architecture and sulfur bathhouses.</td>
+            <td>3h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6939,44.8008" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:30</td>
+            <td class="activity-cell">
+              Lunch at Machakhela
+              <div class="notes">Try the Khachapuri.</div>
+            </td>
+            <td>Traditional Georgian cuisine in a cozy setting.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6927,44.8011" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>15:30</td>
+            <td class="activity-cell">
+              Visit the Georgian National Museum
+              <div class="notes">Check out the archaeological collection.</div>
+            </td>
+            <td>Learn about Georgia's rich history and culture.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6956,44.7956" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>18:00</td>
+            <td class="activity-cell">
+              Relax at the Sulfur Baths
+              <div class="notes">Choose a private room for a more comfortable experience. Gulo's Thermal Spa is a local favourite.</div>
+            </td>
+            <td>Experience Tbilisi's famous sulfur baths for a unique and relaxing experience.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6878,44.8044" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>20:30</td>
+            <td class="activity-cell">
+              Dinner at Barbarestan
+              <div class="notes">Reservations are recommended.</div>
+            </td>
+            <td>Upscale Georgian restaurant with a menu based on a 19th-century cookbook.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7003,44.7925" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 2: 2024-10-28</h2>
+        <p class="weather">Sunny, 20°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Breakfast at Entree
+              <div class="notes">Try the almond croissant.</div>
+            </td>
+            <td>French bakery with delicious pastries and coffee.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7047,44.7954" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>10:30</td>
+            <td class="activity-cell">
+              Visit the Chronicles of Georgia
+              <div class="notes"></div>
+            </td>
+            <td>Monumental structure depicting Georgian history.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7644,44.7916" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td class="activity-cell">
+              Lunch at Pasanauri
+              <div class="notes">Try different fillings.</div>
+            </td>
+            <td>Restaurant specializing in Khinkali, a Georgian dumpling.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7073,44.7947" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:30</td>
+            <td class="activity-cell">
+              Explore the Dry Bridge Market
+              <div class="notes">Bargain for the best prices.</div>
+            </td>
+            <td>Browse antiques, souvenirs, and local crafts.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6958,44.7903" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>17:00</td>
+            <td class="activity-cell">
+              Ride the Tbilisi Funicular to Mtatsminda Park
+              <div class="notes">The funicular offers stunning city views.</div>
+            </td>
+            <td>Enjoy panoramic views of Tbilisi and visit the amusement park.</td>
+            <td>3h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6933,44.7884" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>20:30</td>
+            <td class="activity-cell">
+              Dinner at Culinarium Khasheria
+              <div class="notes">Try their innovative takes on traditional dishes.</div>
+            </td>
+            <td>Modern Georgian cuisine with a focus on local ingredients.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7027,44.7917" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="day-card">
+      <div class="day-header">
+        <h2>Day 3: 2024-10-29</h2>
+        <p class="weather">Rainy, 16°C</p>
+      </div>
+      
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+            <th>Details</th>
+            <th>Duration</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td class="activity-cell">
+              Breakfast at Puris Guliashvili
+              <div class="notes">Try the shotis puri, a traditional Georgian bread.</div>
+            </td>
+            <td>Bakery serving delicious bread and pastries.</td>
+            <td>1h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7009,44.7998" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>10:30</td>
+            <td class="activity-cell">
+              Visit the Simon Janashia Museum of Georgia
+              <div class="notes">Focus on the medieval artifacts section.</div>
+            </td>
+            <td>Explore Georgia's history and art.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6954,44.7977" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td class="activity-cell">
+              Lunch at Salobie Bia
+              <div class="notes">Try the pkhali platter.</div>
+            </td>
+            <td>Vegetarian Georgian cuisine.</td>
+            <td>1.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.7046,44.7929" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>14:30</td>
+            <td class="activity-cell">
+              Shopping at Galleria Tbilisi
+              <div class="notes">Good place to find souvenirs and gifts.</div>
+            </td>
+            <td>Modern shopping mall with a variety of international and local brands.</td>
+            <td>3h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6956,44.7951" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>18:00</td>
+            <td class="activity-cell">
+              Wine Tasting at 8000 Vintages
+              <div class="notes">Learn about Georgian winemaking traditions. Located near Freedom Square.</div>
+            </td>
+            <td>Sample Georgian wines.</td>
+            <td>2h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6947,44.7953" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>20:30</td>
+            <td class="activity-cell">
+              Dinner at Keto and Kote
+              <div class="notes">Enjoy live music.</div>
+            </td>
+            <td>Traditional Georgian dishes in a charming atmosphere.</td>
+            <td>2.5h</td>
+            <td>
+              <a href="https://maps.google.com/?q=41.6932,44.7921" class="map-link" target="_blank">
+                View Map
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="no-print">
+    <div class="pro-tip">
+      <h3>Pro Tip</h3>
+      <p>Utilize the Bolt app for affordable and convenient transportation around the city.</p>
+    </div>
+    <p class="print-footer">Printed from: https://example.com | Generated on: 2024-10-27</p>
+  </footer>
+</body>
+</html>
+```
